@@ -4,9 +4,9 @@ import com.senai.DEVAgro.model.Grao;
 import com.senai.DEVAgro.repository.GraoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-@AllArgsConstructor
 @Service
 public class GraoService {
 

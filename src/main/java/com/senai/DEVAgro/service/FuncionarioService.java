@@ -5,6 +5,7 @@ import com.senai.DEVAgro.model.Funcionario;
 import com.senai.DEVAgro.repository.FuncionarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @AllArgsConstructor
