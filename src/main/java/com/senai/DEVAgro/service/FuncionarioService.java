@@ -1,6 +1,7 @@
 package com.senai.DEVAgro.service;
 
 
+import com.senai.DEVAgro.model.Empresa;
 import com.senai.DEVAgro.model.Funcionario;
 import com.senai.DEVAgro.repository.FuncionarioRepository;
 import lombok.AllArgsConstructor;
@@ -34,5 +35,9 @@ public class FuncionarioService {
 
     public void delete(Long id) {
         funcionarioRepository.deleteById(id);
+    }
+
+    public List<Funcionario> funcionarioEmpresa(Empresa empresa) {
+        return funcionarioRepository.findByEmpresa(empresa);
     }
 }
