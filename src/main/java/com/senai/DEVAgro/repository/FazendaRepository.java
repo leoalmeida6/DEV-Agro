@@ -12,8 +12,7 @@ public interface FazendaRepository extends JpaRepository<Fazenda, Long> {
 
     List<Fazenda> findByEmpresa(Empresa empresa);
 
-/*    default Long countFazenda(Empresa empresa) {
-        return null;
-    }*/
+
+    /*    Long countFazenda(Long id);*/
 
 }

@@ -20,7 +20,7 @@ public class FazendaController {
     FazendaService fazendaService;
     EmpresaService empresaService;
 
-    //Endpoint 2
+
     @PostMapping
     public Fazenda saveFazenda(@RequestBody @Valid Fazenda fazenda) {
         return fazendaService.save(fazenda);
@@ -31,14 +31,15 @@ public class FazendaController {
         return ResponseEntity.status(HttpStatus.OK).body(fazendaService.findAll());
     }
 
+    //Endpoint 2
     @GetMapping(value = "/fazendaEmpresa/{id}")
     public ResponseEntity<List<Fazenda>> findByEmpresa(@PathVariable Long id) {
         Empresa empresa = empresaService.findById(id);
         return ResponseEntity.ok().body(fazendaService.fazendaEmpresa(empresa));
     }
 
-    //Endpoint 3
-/*    @GetMapping(value = "/quantideFazenda/{id}")
+/*    //Endpoint 3
+    @GetMapping(value = "/quantideFazenda/{id}")
     public ResponseEntity<Long> countAllFazenda(@PathVariable Long id) {
         Empresa empresa = empresaService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(fazendaService.countAllFazenda(empresa));

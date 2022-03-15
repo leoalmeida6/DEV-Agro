@@ -44,6 +44,6 @@ public class FazendaService {
     }
 
 /*    public Long countAllFazenda(Empresa empresa) {
-        return fazendaRepository.countFazenda(empresa);
+        return fazendaRepository.countFazenda(empresa.getId());
     }*/
 }

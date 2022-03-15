@@ -23,9 +23,9 @@ public class Grao {
     @Column(nullable = false)
     private Integer tempoMedioColheita;
 
-    //RELACIONAMENTO
+    //Empresa
     @ManyToOne
-    @JoinColumn(name = "id_empresa")
+    @JoinColumn(name = "empresa_id", referencedColumnName = "ID")
     private Empresa empresa;
 
     @OneToOne

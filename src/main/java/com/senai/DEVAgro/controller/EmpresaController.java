@@ -18,7 +18,7 @@ public class EmpresaController {
     final EmpresaService empresaService;
 
     @PostMapping
-    public Empresa saveFazenda(@RequestBody @Valid Empresa empresa) {
+    public Empresa saveEmpresa(@RequestBody @Valid Empresa empresa) {
         return empresaService.save(empresa);
     }
 
