@@ -27,10 +27,8 @@ public class GraoController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveGrao(@RequestBody @Valid GraoDto graoDto) {
-        var graoModel = new Grao();
-        BeanUtils.copyProperties(graoDto, graoModel); //Conversão dos arquivos DTO para Model
-        return ResponseEntity.status(HttpStatus.CREATED).body(graoService.save(graoModel));
+    public Grao saveGrao(@RequestBody @Valid Grao grao) {
+        return graoService.save(grao);
     }
 
     @GetMapping

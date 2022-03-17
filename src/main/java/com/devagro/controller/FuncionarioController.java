@@ -1,11 +1,9 @@
 package com.devagro.controller;
 
-import com.devagro.dto.FuncionarioDto;
-import com.devagro.model.Empresa;
+
 import com.devagro.model.Funcionario;
 import com.devagro.service.EmpresaService;
 import com.devagro.service.FuncionarioService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,10 +24,8 @@ public class FuncionarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveFuncionario(@RequestBody @Valid FuncionarioDto funcionarioDto) {
-        var funcionarioModel = new Funcionario();
-        BeanUtils.copyProperties(funcionarioDto, funcionarioModel); //Conversão dos arquivos DTO para Model
-        return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioService.save(funcionarioModel));
+    public Funcionario saveFuncionario(@RequestBody @Valid Funcionario funcionario) {
+        return funcionarioService.save(funcionario);
     }
 
     @GetMapping
