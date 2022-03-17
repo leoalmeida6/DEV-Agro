@@ -4,6 +4,7 @@ import com.devagro.model.Empresa;
 import com.devagro.model.Funcionario;
 import com.devagro.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -41,11 +42,11 @@ public class FuncionarioService {
         funcionarioRepository.deleteById(id);
     }
 
-/*    //Endpoint 9
+    //Endpoint 9
     public List<Funcionario> funcionarioEmpresa(Empresa empresa) {
-        return funcionarioRepository.findByFuncionario(empresa);
+        return funcionarioRepository.findByEmpresa(empresa);
     }
-
+/*
     public Long countFuncionarioEmpresa(Empresa empresa) {
         return funcionarioRepository.countByEmpresa(empresa);
     }*/

@@ -1,6 +1,6 @@
 package com.devagro.controller;
 
-
+import com.devagro.model.Empresa;
 import com.devagro.model.Funcionario;
 import com.devagro.service.EmpresaService;
 import com.devagro.service.FuncionarioService;
@@ -37,6 +37,13 @@ public class FuncionarioController {
     public ResponseEntity<Object> getOneFuncionario(@PathVariable Long id) {
         Funcionario funcionario = funcionarioService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(funcionarioService.findById(id));
+    }
+
+    //Endpoint 9
+    @GetMapping(value = "/funcionarioEmpresa/{id}")
+    public ResponseEntity<List<Funcionario>> findByEmpresa(@PathVariable Long id) {
+        Empresa empresa = empresaService.findById(id);
+        return ResponseEntity.ok().body(funcionarioService.funcionarioEmpresa(empresa));
     }
 
 /*    //Endpoint 10

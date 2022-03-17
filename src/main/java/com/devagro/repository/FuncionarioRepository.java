@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 
-/*    //Endpoint 9
-    List<Fazenda> findByFuncionario(Empresa empresa);
-
+    //Endpoint 9
+    List<Funcionario> findByEmpresa(Empresa empresa);
+/*
     Long countByEmpresa(Empresa empresa);*/
 }

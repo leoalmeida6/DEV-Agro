@@ -3,13 +3,14 @@ package com.devagro.service;
 import com.devagro.model.Empresa;
 import com.devagro.repository.EmpresaRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class EmpresaService {
 
-     final EmpresaRepository empresaRepository;
+    final EmpresaRepository empresaRepository;
 
     public EmpresaService(EmpresaRepository empresaRepository) {
 

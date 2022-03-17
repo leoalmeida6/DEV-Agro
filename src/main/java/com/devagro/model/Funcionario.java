@@ -3,15 +3,18 @@ package com.devagro.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
+
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
 
 @Data
 @Entity
 @Table(name = "funcionario")
 public class Funcionario {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false, length = 40)
     private String nome;
@@ -19,20 +22,19 @@ public class Funcionario {
     private String sobrenome;
     @CPF
     @Column(nullable = false, unique = true, length = 11)
-    @Pattern(regexp = "(\\d{2})\\d{4}-\\d{4}$")
-    //https://pt.stackoverflow.com/questions/133691/formatar-campo-cpf-ou-cnpj-usando-regex
+    @Pattern(regexp = "(^\\d{3}\\x2E\\d{3}\\x2E\\d{3}\\x2D\\d{2}$)")
     private String cpf;
     @Column(nullable = false, length = 12)
-    @Pattern(regexp = "^(\\(\\d{2}\\)?\\s?|\\d{2}(\\-|\\s))?\\d{2,4}(\\-|\\s)?\\d{4,5}$")
+    @Pattern(regexp="/^\\([0-9]{2}\\) [0-9]?[0-9]{4}-[0-9]{4}$/")
     private String telefone;
     @Column(nullable = false, length = 1)
-    private Character sexo;
+    private String sexo;
     @Column(nullable = false, length = 8)
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private String dataNascimento;
     @Column(nullable = false, length = 8)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private String dataContratacao;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dataContratacao = LocalDate.now();
 
 
     //RELACIONAMENTO
