@@ -14,7 +14,7 @@ public class FuncionarioDto {
     @NotBlank
     private String cpf;
     @NotNull
-    @Size(max = 12)
+    @Size(max = 14)
     private String telefone;
     @NotBlank
     private String sexo;

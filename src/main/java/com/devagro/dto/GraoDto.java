@@ -9,4 +9,5 @@ public class GraoDto {
     private String nome;
     @NotNull
     private Integer tempoMedioColheita;
+
 }

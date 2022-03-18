@@ -47,4 +47,9 @@ public class GraoService {
     public List<Grao> graoEmpresa(Empresa empresa) {
         return graoRepository.findByEmpresa(empresa);
     }
+
+/*    //Endpoint 8
+    public List<Grao> findAllCresc () {
+        return graoRepository.findAllByOrderByIdCresc();
+    }*/
 }

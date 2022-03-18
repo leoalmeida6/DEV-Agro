@@ -46,10 +46,10 @@ public class FuncionarioController {
         return ResponseEntity.ok().body(funcionarioService.funcionarioEmpresa(empresa));
     }
 
-/*    //Endpoint 10
+    //Endpoint 10
     @GetMapping(value = "/quantidadeFuncionario/{id}")
     public ResponseEntity<Long> countFuncionarioEmpresa(@PathVariable Long id) {
         Empresa empresa = empresaService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(funcionarioService.countFuncionarioEmpresa(empresa));
-    }*/
+    }
 }

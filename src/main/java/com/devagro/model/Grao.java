@@ -1,7 +1,6 @@
 package com.devagro.model;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Data

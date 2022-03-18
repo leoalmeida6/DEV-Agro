@@ -46,9 +46,10 @@ public class FuncionarioService {
     public List<Funcionario> funcionarioEmpresa(Empresa empresa) {
         return funcionarioRepository.findByEmpresa(empresa);
     }
-/*
+
+    //Endpoint 10
     public Long countFuncionarioEmpresa(Empresa empresa) {
         return funcionarioRepository.countByEmpresa(empresa);
-    }*/
+    }
 
 }
