@@ -1,7 +1,6 @@
 package com.devagro.service;
 
 import com.devagro.model.Empresa;
-import com.devagro.model.Fazenda;
 import com.devagro.model.Grao;
 import com.devagro.repository.GraoRepository;
 import org.springframework.stereotype.Service;
@@ -47,9 +46,4 @@ public class GraoService {
     public List<Grao> graoEmpresa(Empresa empresa) {
         return graoRepository.findByEmpresa(empresa);
     }
-
-/*    //Endpoint 8
-    public List<Grao> findAllCresc () {
-        return graoRepository.findAllByOrderByIdCresc();
-    }*/
 }

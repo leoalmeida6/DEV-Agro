@@ -33,6 +33,12 @@ public class FazendaController {
         return ResponseEntity.status(HttpStatus.OK).body(fazendaService.findAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Fazenda> findById(@PathVariable Long id) {
+        Fazenda fazenda = fazendaService.findById(id);
+        return ResponseEntity.ok().body(fazenda);
+    }
+
     //Endpoint 2
     @GetMapping(value = "/fazendaEmpresa/{id}")
     public ResponseEntity<List<Fazenda>> findByEmpresa(@PathVariable Long id) {
@@ -45,5 +51,30 @@ public class FazendaController {
     public ResponseEntity<Long> countFazendaEmpresa(@PathVariable Long id) {
         Empresa empresa = empresaService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(fazendaService.countFazendaEmpresa(empresa));
+    }
+
+    //Endpoint 4
+
+
+    //Endpoint 5
+    @PutMapping(value = "/adicionaEstoque/{id}/{quantidade}")
+    public ResponseEntity<Fazenda> insertEstoque(@PathVariable @Valid Long id, @PathVariable Integer quantidade) {
+
+        Fazenda fazenda = fazendaService.findById(id);
+        Integer estoqueAtual = fazenda.getEstoque();
+        fazenda.setEstoque(estoqueAtual + quantidade);
+        Fazenda updateEmpresa = fazendaService.update(id, fazenda);
+        return ResponseEntity.status(HttpStatus.OK).body(updateEmpresa);
+    }
+
+    //Endpoint 6
+    @PutMapping(value = "/removeEstoque/{id}/{quantidade}")
+    public ResponseEntity<Fazenda> deleteEstoque(@PathVariable @Valid Long id, @PathVariable Integer quantidade) {
+
+        Fazenda fazenda = fazendaService.findById(id);
+        Integer estoqueAtual = fazenda.getEstoque();
+        fazenda.setEstoque(estoqueAtual - quantidade);
+        Fazenda updateEmpresa = fazendaService.update(id, fazenda);
+        return ResponseEntity.status(HttpStatus.OK).body(updateEmpresa);
     }
 }

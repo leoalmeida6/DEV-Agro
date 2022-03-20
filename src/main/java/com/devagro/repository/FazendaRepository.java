@@ -15,4 +15,5 @@ public interface FazendaRepository extends JpaRepository<Fazenda, Long> {
 
     //Endpoint 3
     Long countByEmpresa(Empresa empresa);
+
 }

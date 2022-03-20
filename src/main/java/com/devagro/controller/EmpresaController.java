@@ -24,13 +24,6 @@ public class EmpresaController {
         this.empresaService = empresaService;
     }
 
-/*    @PostMapping
-    public ResponseEntity<Empresa> saveEmpresa(@RequestBody @Valid EmpresaDto empresaDto) {
-        var empresaModel = new Empresa();
-        BeanUtils.copyProperties(empresaDto, empresaModel); //Conversão dos arquivos DTO para Model
-        return ResponseEntity.status(HttpStatus.CREATED).body(empresaService.save(empresaModel));
-    }*/
-
     @PostMapping
     public Empresa saveEmpresa(@RequestBody @Valid Empresa empresa) {
         return empresaService.save(empresa);

@@ -32,7 +32,6 @@ public class FazendaService {
     }
 
     public Fazenda update(Long id, Fazenda fazenda) {
-
         Fazenda result = fazendaRepository.save(fazenda);
         return result;
     }
@@ -51,5 +50,4 @@ public class FazendaService {
     public Long countFazendaEmpresa(Empresa empresa) {
         return fazendaRepository.countByEmpresa(empresa);
     }
-
 }
